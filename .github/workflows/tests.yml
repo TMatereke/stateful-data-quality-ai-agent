@@ -1,3 +1,4 @@
+
 name: Agent regression tests
 
 on:
@@ -12,18 +13,18 @@ permissions:
 
 jobs:
   regression-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     env:
-      # Test-only placeholder; never a real credential.
-      # The regression suite should not make API requests.
+      # Placeholder only; regression tests must not call the live API.
       OPENAI_API_KEY: test-only-placeholder
+
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.13"
 
