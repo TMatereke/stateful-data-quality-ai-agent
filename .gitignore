@@ -1,0 +1,54 @@
+﻿# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+
+# Real customer and approval data — never publish
+/day01/customers.csv
+/day01/approval_registry.csv
+/day01/agent_audit.csv
+
+# Private runtime state and conversation memory
+/day01/agent_state.json
+/day01/conversation_memory.json
+/day01/agent_session.json
+/day01/conversation_memory.before_recovery_test.json
+
+# Generated test reports and temporary files
+/day01/agent_test_report.json
+*.tmp
+*.log
+
+# Local backups
+*.backup.py
+*.bak
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Duplicate portfolio packaging files (keep locally, not in Git)
+/day01/agent_portfolio_starter.zip
+/day01/agent_portfolio_starter/
+
+# The canonical README is at the repository root
+/day01/README.md
+
+# Earlier lesson scripts not included in the featured portfolio demo
+/day01/first_agent.py
+/day01/day05_complete.py
+/day01/test_human_approval.py
+/day01/test_request_approval.py
