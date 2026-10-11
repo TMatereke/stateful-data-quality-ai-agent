@@ -2,7 +2,7 @@
 [![Agent regression tests](https://github.com/TMatereke/stateful-data-quality-ai-agent/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/TMatereke/stateful-data-quality-ai-agent/actions/workflows/tests.yml)
 A Python-based business automation prototype that combines an LLM tool-calling loop with persistent customer memory, human-approved remediation, audit logging, and automated regression tests.
 
-> **Project status:** Working learning/portfolio prototype. The local regression suite last reported **20 tests passed, 0 failed**. This is not yet a production-ready data platform; see [Limitations and next steps](#limitations-and-next-steps).
+> **Project status:** Working learning/portfolio prototype. The local regression suite last reported **20 tests passed, 0 failed**. This is not yet a production-ready data platform; see [Current limitations](#current-limitations).
 
 ## Why this project matters
 
