@@ -279,3 +279,23 @@ This project uses local CSV files and a locally supplied reviewer identity. The 
 
 
 For production use, add authenticated reviewer identities, transactional storage, stronger authorization, concurrency protection, monitoring, and appropriate security review.
+
+
+## Example observed results
+
+The following results were observed using the synthetic demo dataset.
+
+| Measure                       | Result                                |
+| ----------------------------- | ------------------------------------- |
+| Initial Globex revenue        | -62,000                               |
+| Initial data-quality score    | 80/100                                |
+| Human approval                | Approved                              |
+| Corrected Globex revenue      | 62,000                                |
+| Approval lifecycle            | Consumed after successful remediation |
+| Post-remediation verification | PASS                                  |
+| Remaining data-quality issues | 0                                     |
+| Automated regression tests    | 20 passed, 0 failed                   |
+
+The audit trail recorded the approval request, reviewer decision, revenue correction, approval consumption, and remediation verification.
+
+**Safety note:** The reviewer identity in this prototype is supplied locally and is not independently authenticated. The demonstration uses synthetic customer data and does not establish production-grade financial controls.
