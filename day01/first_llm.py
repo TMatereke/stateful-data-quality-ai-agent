@@ -9,6 +9,7 @@ from openai import NotFoundError
 client = OpenAI()
 RUN_ID = str(uuid.uuid4())[:8]
 WORKFLOW_NAME = "CustomerDataQuality"
+MODEL = os.getenv("OPENAI_MODEL", "gpt-5.6-luna")
 
 def get_sales_data():
     return {
@@ -3311,7 +3312,7 @@ if __name__ == "__main__":
         # 3. Submit the user's message to the saved conversation
         try:
             response = client.responses.create(
-                model="gpt-5.6-luna",
+                model=MODEL,
                 conversation=conversation_id,
                 instructions=instructions,
                 input=user_query,
@@ -3331,7 +3332,7 @@ if __name__ == "__main__":
 
             # Retry the user's message once, using the new conversation.
             response = client.responses.create(
-                model="gpt-5.6-luna",
+                model=MODEL,
                 conversation=conversation_id,
                 instructions=instructions,
                 input=user_query,
@@ -3375,7 +3376,7 @@ if __name__ == "__main__":
 
             # 5. Submit tool results to the same conversation
             response = client.responses.create(
-                model="gpt-5.6-luna",
+                model=MODEL,
                 conversation=conversation_id,
                 instructions=instructions,
                 input=tool_outputs,

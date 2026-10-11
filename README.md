@@ -124,9 +124,12 @@ Set the API key in the current PowerShell session. Replace the placeholder with 
 
 ```powershell
 $env:OPENAI_API_KEY = "YOUR_API_KEY"
+
+# Optional: override the default model
+$env:OPENAI_MODEL = "YOUR_AVAILABLE_MODEL_ID"
 ```
 
-The current script uses a model identifier configured in `first_llm.py`. Make sure it is available to your API project before running the agent.
+The agent reads its model selection from the `OPENAI_MODEL` environment variable. If that variable is unset, it defaults to `gpt-5.6-luna`. Replace the example placeholder with a model ID enabled for your API project. To use the default, omit the optional setting.
 
 ## Run the agent
 
